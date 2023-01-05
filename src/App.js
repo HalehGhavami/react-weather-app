@@ -8,9 +8,8 @@ function App() {
   return (
     <div className="App">
       <div className="container weather-container">
-        <h1>Weather App</h1>
         {/* <Navigation /> */}
-        <Weather />
+        <Weather defaultCity="Tehran" />
         {/* <Forcast /> */}
       </div>
       <footer>
