@@ -1,5 +1,7 @@
 import './ResultWeather.css';
 import WeatherIcon from './WeatherIcon';
+import FormattedDate from './FormattedDate';
+import WeatherTemperature from './WeatherTemperature';
 // import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
@@ -7,15 +9,33 @@ import WeatherIcon from './WeatherIcon';
 export default function ResultWeather(props) {
   return (
     <div className="ResultWeather">
+      <h1>{props.data.city}</h1>
       <ul>
-        <li>Temperature: {Math.round(props.data.temperature)}°C</li>
-        <li>Description: {props.data.description}</li>
-        <li>Humidity: {props.data.humidity}%</li>
-        <li>Wind: {props.data.wind}km/h</li>
         <li>
-          <WeatherIcon code={props.data.icon} />
+          <FormattedDate date={props.data.date} />
         </li>
+        <li className="text-capitalize">{props.data.description}</li>
       </ul>
+      <div className="row mt-3">
+        <div className="col-6">
+          <div className="d-flex">
+            <div>
+              <WeatherIcon code={props.data.icon} size={52} />
+            </div>
+
+            <div>
+              <WeatherTemperature celsius={props.data.temperature} />
+            </div>
+          </div>
+        </div>
+        <div className="col-6">
+          <ul>
+            <li>Humidity: {props.data.humidity}%</li>
+            <li>Wind: {props.data.wind} km/h</li>
+          </ul>
+        </div>
+      </div>
+      
     </div>
   );
 }

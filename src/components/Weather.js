@@ -4,8 +4,8 @@ import axios from 'axios';
 import SearchEngine from './SearchEngine';
 import ResultWeather from './ResultWeather';
 
-export default function Weather() {
-  const [city, setCity] = useState('');
+export default function Weather(props) {
+  const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ ready: false });
 
   function handleResponse(response) {
@@ -47,6 +47,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    return <SearchEngine handleSubmit={handleSubmit} updateCity={updateCity} />;
+     search();
+    return 'Loading...';
   }
 }
