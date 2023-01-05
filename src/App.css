@@ -1,4 +1,16 @@
 .App {
+  max-width: 600px;
+  margin: 30px auto;
   text-align: center;
 }
 
+.weather-container {
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
+    margin: 20px 0;
+    max-width: 630px;
+    padding: 20px 16px 24px;
+}
+.App footer {
+  /* font-size: 11px; */
+  margin: 10px 0;
+}
